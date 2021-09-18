@@ -41,7 +41,53 @@
         </div>
 
     </div>
-    
+     <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            var x="0";
+            recognition.onresult = function(event) {
+                // console.log(event);
+               
+
+                x=event.results[0][0].transcript;
+       
+                         if (x=='home' || x=='go home' ){
+                           responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                            window.location.href='HOMEvc.html';
+
+                        }
+                        else if (x=='back' || x=='go back' || x=='0' ){
+                           responsiveVoice.speak(("Welcome to the Callendar Hub screen."));
+                           window.location.href='calendarhomevc.html';
+                        }
+                        else if (x=='yes'){
+                            
+                            morningmedstaken()
+                            
+                        }
+                 else if (x=='no'){
+                            morningmedsNOTtaken() 
+                        }
+                        
+                        else{
+
+                            record();
+                        }
+
+            }
+            recognition.start(); 
+              
+        }
+
+    </script>
     
 </body>
 <script>
