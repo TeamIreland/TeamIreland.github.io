@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload="voice()">
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        
+        <button onclick="window.location.href='touchmenuvc.html'; "><img id="agh" width=100% height=100%></button>    
+        
+    </div>
+    
+    
+</body>
+
+<script>
+chgimg('/IMAGES/opensmile.svg');
+
+function voice(){
+    responsiveVoice.speak("touch the screen for touch use or say voice for voice use");
+    setTimeout(reply, 3000);
+}   
+function reply(){
+    var recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-GB";
+
+    var x="0";
+    recognition.onresult = function(event) {
+     //console.log(event);
+               
+
+                
+        x=event.results[0][0].transcript;
+            
+        if (x=='voice'){
+               
+           responsiveVoice.speak(("ok use voice version of the web app Here we have phone, calendar, appliances, activities, exercise and find"));
+                window.location.href='touchmenuvc.html';  
+        }
+  
+        else if(x=='touch'){
+                responsiveVoice.speak("ok use touch version of the web app");
+                window.location.href='touchmenuvc.html';                                                               
+        }
+        else{
+           
+        }
+                
+    }
+    recognition.start(); 
+
+}                    
+
+function storeprevpage(){
+    sessionStorage.prevpage="touchmenuvc.html";
+    window.location.href='EXERCISEduevc.html';
+}
+
+function chgimg(newimg){
+    document.getElementById("agh").src=newimg;
+}
+
+
+
+
+
+
+</script>
+
+</html>

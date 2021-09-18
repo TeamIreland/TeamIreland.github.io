@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADIO</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div id="iframeloc" class="MAIN">
+            
+            
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.location.href=document.referrer;">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+       
+    
+</body>
+<script>
+    responsiveVoice.speak(sessionStorage.activity);
+    var makeiframe = document.createElement('iframe');
+    makeiframe.src = sessionStorage.iframesrc;
+    makeiframe.setAttribute("width","100%");
+    makeiframe.setAttribute("height","100%");
+    makeiframe.setAttribute("frameborder","0");
+    makeiframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+    makeiframe.sandbox=sessionStorage.iframesandbox;
+    document.getElementById("iframeloc").appendChild(makeiframe);
+</script>
+</html>

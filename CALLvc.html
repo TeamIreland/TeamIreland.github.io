@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICE CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload= howlongrecord();>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script> 
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut"onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find'));">
+                <img src="/IMAGES/Home-button.svg" width=100% height=90% alt="GO BACK"></button>
+        </div> 
+       
+        <div class="MAIN">
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="window.location.href='VoiceCallvc.html',responsiveVoice.speak(('Welcome to the voice call screen.'));">
+                    <img src="/IMAGES/phone3.svg" width=100% height=80% alt="Phone"><br>VOICE CALL
+                </button></li>
+                <li><button onclick="window.location.href='VideoCallvc.html',responsiveVoice.speak(('Welcome to the Video Call screen.'));">
+                    <img src="/IMAGES/Videocall.svg" width=100% height=80% alt="VideoCall"><br>VIDEO CALL
+                </button></li>
+                <li><button onclick="window.location.href='Groupsvc.html',responsiveVoice.speak(('Welcome to the Groups screen.'));">
+                    <img src="/IMAGES/Group-meet.svg" width=100% height=80% alt="Group CALL"><br>GROUP CALL
+                </button></li>
+                
+                
+            </ul>
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="window.location.href='DOCTORvc.html',responsiveVoice.speak(('Here you can call doctor or more choices'));">
+                    <img src="/IMAGES/Doctor.svg" width=100% height=60% alt="Doctor"><br>DOCTOR
+                </button></li>
+                <li><button onclick="window.location.href='emergencyvc.html',responsiveVoice.speak(('YOU ARE ON SCREEN EMERGENCY, IS THIS AN EMERGENCY?!'));" >
+                    <img src="/IMAGES/emergency.svg" width=100% height=60% alt="EMERGENCY"><br>EMERGENCY
+                </button></li>
+                <li></li>
+                
+                
+            </ul>
+            <div class="maingap"></div>
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.location.href='touchmenuvc.html', responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find'));">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=90% alt="GO BACK"></button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+
+        var x="0";
+        recognition.onresult = function(event) {
+            // console.log(event);
+           
+            x=event.results[0][0].transcript;
+        
+
+                   if (x=='voice call' || x=='call voice'){
+                   responsiveVoice.speak(("Welcome to the voice call screen."));
+                        window.location.href='VoiceCallvc.html';
+                    }
+                    else if (x=='video call' || x=='video' ){
+                       responsiveVoice.speak(("Welcome to the Video Call screen."));
+                        window.location.href='VideoCallvc.html';
+                    }
+                    else if (x=='group' || x=='groupcall' || x=='groups'){
+                       responsiveVoice.speak(("Welcome to the Groups screen."));
+                        window.location.href='Groupsvc.html';
+                    }
+                    else if (x=='Doctor'|| x=='doctor' || x== 'screen doctor'){
+                       responsiveVoice.speak(("Here you can call doctor or more choices"));
+                        window.location.href='DOCTORvc.html';
+                    }
+                    else if (x=='emergency'){
+                       responsiveVoice.speak(("YOU ARE ON SCREEN EMERGENCY, IS THIS AN EMERGENCY?!"));
+                        window.location.href='emergencyvc.html';
+                    }
+                    else if (x=='home' || x=='go home' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else if (x=='back' || x=='go back' || x=='0' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else{                   
+                    
+                        record()
+                    } 
+        }
+        recognition.start(); 
+          
+    }
+
+</script>
+<script>
+    function howlongrecord(){
+        if(sessionStorage.prevpage2=="touchmenuvc.html"){
+            setTimeout(record, 4000);
+        }
+        else if(sessionStorage.prevpage2=="VoiceCallvc.html"){
+            setTimeout(record, 1000);
+        }
+        else{
+            record()
+        }
+    }
+</script>
+
+
+</body>
+</html>

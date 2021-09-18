@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLIANCES</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body onload='setTimeout(record,4500)'>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance('Welcome to Cooker')), appliance('COOKER','/IMAGES/Cooker.svg','cookeronoffvc.html')">
+                    <img src="/IMAGES/Cooker.svg" width=100% height=80% alt="COOKER"><br>COOKER
+                </button></li>
+                <li><button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance('Welcome to Lights')),appliance('LIGHTS','/IMAGES/Lights.svg','roomslightsvc.html')">
+                    <img src="/IMAGES/Lights.svg" width=100% height=80% alt="LIGHTS"><br>LIGHTS
+                </button></li>
+                <li><button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance('Welcome to Heating')),appliance('HEATING','/IMAGES/Heating.svg','heatingonoffvc.html')">
+                    <img src="/IMAGES/Heating.svg" width=100% height=80% alt="HEATING"><br>HEATING
+                </button></li>
+            </ul>
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance('Welcome to Alarm')),appliance('ALARM','/IMAGES/alarm.svg','alarmsetunsetvcvc.html')">
+                    <img src="/IMAGES/alarm.svg" width=100% height=80% alt="Security"><br>ALARM
+                </button></li>
+                <li><button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance('Welcome to Blinds')),appliance('BLINDS','/IMAGES/blinds.svg','roomsblindsvc.html')">
+                    <img src="/IMAGES/blinds.svg" width=100% height=80% alt="BLINDS"><br>BLINDS
+                </button></li>
+                <li><button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance('Welcome to Door')),appliance('FRONT DOOR','/IMAGES/door.svg','frontdoorvc.html')">
+                    <img src="/IMAGES/door.svg" width=100% height=80% alt="DOOR"><br>DOOR
+                </button></li>
+                
+            </ul>
+            <div class="maingap"></div> 
+        </div>
+        <div class="BACK">
+            <button onclick="window.history.back(),responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+
+        var x="0";
+        recognition.onresult = function(event) {
+            // console.log(event);
+           
+            x=event.results[0][0].transcript;
+            
+                   if (x=='cooker'){
+                   responsiveVoice.speak(("You can Turn it on or off or report a fault"));
+                    appliance('COOKER','/IMAGES/Cooker.svg','cookeronoffvc.html');
+                    }
+                    else if (x=='light' || x=='lights' ){
+                       responsiveVoice.speak(("Do you want to turn it on in the living room,landing kitchen or report a fault"));
+                        appliance('LIGHTS','/IMAGES/Lights.svg','roomslightsvc.html');
+                    }
+                    else if (x=='heating' || x=='radiator'){
+                       responsiveVoice.speak(("You can Turn it on or off or report a fault"));
+                        appliance('HEATING','/IMAGES/Heating.svg','heatingonoffvc.html');
+                    }
+                    else if (x=='alarm'){
+                   responsiveVoice.speak(("You can set or unset or report a fault"));
+                    appliance('ALARM','/IMAGES/alarm.svg','alarmsetunsetvcvc.html');
+                    }
+                    else if (x=='blind' || x=='blinds' ){
+                       responsiveVoice.speak(("Do you want to turn it on in the living room,landing kitchen or report a fault"));
+                        appliance('BLINDS','/IMAGES/blinds.svg','roomsblindsvc.html');
+                    }
+                    else if (x=='door' || x=='door'){
+                       responsiveVoice.speak(("You can open, or repot a fault."));
+                        appliance('FRONT DOOR','/IMAGES/door.svg','frontdoorvc.html');
+                    }
+                    else if (x=='home' || x=='go home' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else if (x=='thank you' || x=='thanks' ){
+                       responsiveVoice.speak(("Your welcome, hehe"));
+                        record();
+                    }
+                    else if (x=='back' || x=='go back' || x=='0' ){
+                       responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find'));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else{                   
+                    
+                        record()
+                    } 
+        }
+        recognition.start(); 
+          
+    }
+
+</script>
+    
+</body>
+<script>
+    function alarmfault() {
+        sessionStorage.faultlocation= "  ALARM";
+        window.location.href='faultreportvc.html';
+     
+    }
+</script>
+<script >
+    function appliance(faultlocation,faultimg,appliancepg) {
+        sessionStorage.faultlocation= faultlocation;
+        sessionStorage.faultimg= faultimg;
+        window.location.href=appliancepg;
+ 
+    }
+</script> 
+       
+    
+</body>
+
+</html>

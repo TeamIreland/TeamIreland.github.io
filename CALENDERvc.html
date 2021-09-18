@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALENDER</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Welcome to the Home Screen')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+           
+           <iframe src="https://calendar.google.com/calendar/embed?src=confeycollege.scoilnet.ie_classroom2dd08d67%40group.calendar.google.com&ctz=Europe%2FDublin" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.history.back(),responsiveVoice.speak(('Where do you want to go Remiders or Google calendar')); ">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+            var x="0";
+            recognition.onresult = function(event) {
+                // console.log(event);
+                
+                x=event.results[0][0].transcript;
+
+                        
+                        if (x=='home' || x=='go home' ){
+                           responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                            window.location.href='HOMEvc.html';
+                        }
+                        else if (x=='back' || x=='go back' || x=='0' ){
+                           responsiveVoice.speak(("Where do you want to go Remiders or Google calendar"));
+                           window.location.href='calendarhomevc.html';
+                        }
+                        else{
+                            record()
+                        }
+            }
+            recognition.start();    
+        }
+    </script> 
+    
+</body>
+</html>

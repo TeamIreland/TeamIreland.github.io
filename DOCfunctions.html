@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIAGE</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script>recognition.continuous = true;</script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div> 
+            
+            <ul>
+                <li><button onclick="window.location.href='RenewalRequest.html';" >
+                    <img src="/IMAGES/prescription.svg" width=100% height=80% alt="READ"><br>PRESCRIPT<br> RENEWAL
+                </button></li>
+                <li><button onclick="window.location.href='appointment.html';">
+                    <img src="/IMAGES/appointment.svg" width=100% height=80% alt="pain"><br>MAKE<br>APP'T
+                </button></li>
+                <li><button onclick="window.location.href='CallRequestSent.html';">
+                    <img src="/IMAGES/doctorcall.svg" width=100% height=80% alt="MORE"><br>REQUEST<br>A CALL
+                </button></li>
+            </ul>
+            <ul>
+                <li><button onclick="window.location.href='recordvideo.html';">
+                    <img src="/IMAGES/video.svg" width=100% height=80% alt="VIDEO"><br>SEND VIDEO
+                </button></li>
+                <li><button onclick="window.location.href='triage.html';">
+                    <img src="/IMAGES/todo.svg" width=100% height=80% alt="TRIAGE"><br>TRIAGE QUESTIONAIRE
+                </button></li>
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.location.href='DOCTOR.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+       
+    
+</body>
+<script>
+    responsiveVoice.speak('doctor menu');
+</script>
+</html>

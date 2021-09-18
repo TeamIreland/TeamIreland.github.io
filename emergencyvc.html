@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCISE POPUP</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload= record();>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div> 
+           
+            <h1><span style="padding-left:10%">Is this an EMERGENCY??</span></h1>
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="window.history.back();">
+                    <img src="/IMAGES/no.svg" width=100% height=90% alt="GO BACK"><br>GO BACK</button>
+                    
+                </li>
+                <li><button onclick="window.location.href='callingemergencyvc.html';">
+                    <img src="/IMAGES/yes.svg" width=100% height=90% alt="EXERCISE"><br>CALL HELP
+                </button></li>
+               
+                
+            </ul>
+            
+        </div>
+        <div class="BACK">
+            <button onclick="window.history.back();">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+
+        var x="0";
+        recognition.onresult = function(event) {
+            // console.log(event);
+           
+            x=event.results[0][0].transcript;
+           
+                   if (x=='home' || x=='go home' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else if (x=='back' || x=='go back' || x=='0' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='CALLvc.html';
+                    }
+                    else if (x=='call help' || x=='call health' || x=='call Hill' ){
+                       responsiveVoice.speak(("Calling Help"));
+                        window.location.href='callingemergencyvc.html'
+                    }
+                    else if (x=="no" || x== 'now' || x=='knew' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html'
+                    }
+                    else{                   
+                    
+                        record()
+                    } 
+        }
+        recognition.start(); 
+          
+    }
+
+</script>
+    
+</body>
+
+
+</html>

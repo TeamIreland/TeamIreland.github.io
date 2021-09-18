@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICE CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <br><br>
+            <ul>
+                <li><button >
+                    <img id="applianceimg" width=80% height=80% alt=appliancename><br><span id="appliancename"></span> 
+                </button></li>
+            </ul>
+            
+            
+            
+            <h1 align="center">********</h1>
+            <h1 id="appliancestate" align="center"></h1>
+            <h1 align="center">********</h1>
+            
+            
+            
+        </div>
+       
+        <div class="BACK">
+            <button onclick="window.location.href='APPLIANCES.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    
+</body>
+<script>
+    responsiveVoice.speak(sessionStorage.appliancename+'.'+sessionStorage.appliancestate)
+    document.getElementById("applianceimg").src = sessionStorage.applianceimg;
+    document.getElementById("appliancename").innerHTML = sessionStorage.appliancename;
+    document.getElementById("appliancestate").innerHTML = sessionStorage.appliancestate
+   
+</script>
+</html>

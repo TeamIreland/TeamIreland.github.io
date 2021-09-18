@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICE CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <br><br>
+            <h1 align="center">***  A FAULT REPORT  *** </h1><h1 align="center">has been sent for :</h1><br>
+           
+            <ul>
+                <li><button >
+                    <img id="faultimg" width=80% height=80% alt="Knitting"><br><span id="faultloc"></span> 
+                </button></li>
+            </ul>
+            
+            
+            <h1 align="center">Someone will be in CONTACT ASAP</h1><br>
+            
+            
+            
+        </div>
+       
+        <div class="BACK">
+            <button onclick="window.location.href=document.referrer;">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    
+</body>
+<script>
+    responsiveVoice.speak("A fault report has been sent for your "+ sessionStorage.appliancename+ ".someone will be in contact soon");
+    document.getElementById("faultimg").src = sessionStorage.applianceimg;
+    document.getElementById("faultloc").innerHTML = sessionStorage.appliancename;
+   
+</script>
+</html>

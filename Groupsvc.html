@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUP CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=90% alt="GO BACK"></button>
+        </div> 
+        
+        <div class="MAIN">
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="groupcall('/IMAGES/knitting.svg','TUESDAY group')">
+                    <img src="/IMAGES/knitting.svg" width=80% height=80% alt="Will"><br>TUESDAY
+                </button></li>
+                <li><button onclick="groupcall('/IMAGES/church.svg', 'CHURCH group')"> 
+                    <img src="/IMAGES/church.svg" width=80% height=80% alt="Group CALL"><br>CHURCH
+                </button></li>
+                <li><button onclick="groupcall('/IMAGES/family.svg','FAMILY group')">
+                    <img src="/IMAGES/family.svg" width=80% height=80% alt="VideoCall"><br>FAMILY
+                </button></li>
+                
+            </ul>
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="groupcall('/IMAGES/knitting.svg','KNITTING group')">
+                    <img src="/IMAGES/knitknit.svg" width=80% height=80% alt="KNIT"><br>KNITTING
+                </button></li>
+                <li><button onclick="groupcall('/IMAGES/sewing.svg','SEWING group')">
+                    <img src="/IMAGES/sewing.svg" width=80% height=80% alt="SEWING"><br>SEWING
+                </button></li>
+                <li><button onclick="window.location.href='https://meet.google.com/lookup/bj66f76r3k?authuser=0&hs=179';">
+                    <img src="/IMAGES/more.svg" width=80% height=80% alt="INACTIVE"><br>MORE
+                </button></li>
+                
+                
+            </ul>
+            <div class="maingap"></div> 
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.history.back();">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=90% alt="GO BACK"></button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            var x="0";
+            recognition.onresult = function(event) {
+                // console.log(event);
+               
+
+                x=event.results[0][0].transcript;
+        
+                         if (x=='home' || x=='go home' ){
+                           responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                            window.location.href='HOMEvc.html';
+
+                        }
+                        else if (x=='back' || x=='go back' || x=='0' ){
+                           responsiveVoice.speak(("Welcome to the Call screen."));
+                            window.location.href='CALLvc.html';
+                        }
+                        else if (x=='tuesday' || x=='Tuesday' ){
+                           responsiveVoice.speak((" now calling Tuesday Group"));
+                            groupcall('/IMAGES/knitting.svg','TUESDAY group');
+                        }
+                        else if (x=='church'){
+                            responsiveVoice.speak((" now calling Church Group"));
+                             groupcall('/IMAGES/church.svg', 'CHURCH group');
+                        }
+                        else if (x=='family'){
+                            responsiveVoice.speak((" now calling Family"));
+                             groupcall('/IMAGES/family.svg','FAMILY group');
+                        }
+                        else if (x=='knitting'){
+                            responsiveVoice.speak((" now calling Knitting Group"));
+                             groupcall('/IMAGES/knitting.svg','KNITTING group');
+                        }
+                        else if (x=='sewing' || x=='suing'){
+                            responsiveVoice.speak((" now calling Sewing Group"));
+                             groupcall('/IMAGES/sewing.svg','SEWING group');
+                        }
+                        else if (x=='more'){
+                            window.location.href='https://meet.google.com/lookup/bj66f76r3k?authuser=0&hs=179';
+                            record();
+                        }
+                        
+                        else{
+
+                            record();
+                        }
+
+            }
+            recognition.start(); 
+              
+        }
+
+    </script>
+</body>
+<script>
+    function groupcall(imgsrc,groupname) {
+        sessionStorage.imgsrc=imgsrc;
+        sessionStorage.groupname=groupname;
+        window.location.href='GroupCallingvc.html';
+    }
+        
+      
+
+   
+
+</script>
+</html>

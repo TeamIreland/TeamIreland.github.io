@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLIANCES</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body onload="responsiveVoice.speak('appliances')">
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="setappliance('COOKER','/IMAGES/Cooker.svg','ON','/IMAGES/yes.svg','OFF','/IMAGES/no.svg','onoff.html')">
+                    <img src="/IMAGES/Cooker.svg" width=100% height=80% alt="COOKER"><br>COOKER
+                </button></li>
+                <li><button onclick="setappliance('LIGHTS','/IMAGES/Lights.svg','ON','/IMAGES/lighton.svg','OFF','/IMAGES/lightoff.svg','roomslights.html')">
+                    <img src="/IMAGES/Lights.svg" width=100% height=80% alt="LIGHTS"><br>LIGHTS
+                </button></li>
+                <li><button onclick="setappliance('HEATING','/IMAGES/Heating.svg','ON','/IMAGES/yes.svg','OFF','/IMAGES/no.svg','onoff.html')">
+                    <img src="/IMAGES/Heating.svg" width=100% height=80% alt="HEATING"><br>HEATING
+                </button></li>
+            </ul>
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="setappliance('ALARM','/IMAGES/alarm.svg','SET','/IMAGES/alarmset.svg','UNSET','/IMAGES/alarmunset.svg','onoff.html')">
+                    <img src="/IMAGES/alarm.svg" width=100% height=80% alt="Security"><br>ALARM
+                </button></li>
+                <li><button onclick="setappliance('BLINDS','/IMAGES/blinds.svg','UP','/IMAGES/blindsup.svg','DOWN','/IMAGES/blindsdown.svg','roomsblinds.html')">
+                    <img src="/IMAGES/blinds.svg" width=100% height=80% alt="BLINDS"><br>BLINDS
+                </button></li>
+                <li><button onclick="setappliance('FRONT DOOR','/IMAGES/door.svg','OPEN','/IMAGES/opendoor.svg','CLOSE','/IMAGES/opendoor.svg','frontdoor.html')">
+                    <img src="/IMAGES/door.svg" width=100% height=80% alt="DOOR"><br>DOOR
+                </button></li>
+                
+            </ul>
+            <div class="maingap"></div> 
+        </div>
+        <div class="BACK">
+            <button onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+
+    </div>
+       
+    
+</body>
+<script >
+    function setappliance(appliancename,applianceimg,applianceonphrase,applianceonimg,applianceoffphrase,applianceoffimg,appliancepg) {
+        sessionStorage.appliancename= appliancename;
+        sessionStorage.applianceimg= applianceimg;
+        sessionStorage.applianceonphrase= applianceonphrase;
+        sessionStorage.applianceonimg= applianceonimg;
+        sessionStorage.applianceoffphrase= applianceoffphrase;
+        sessionStorage.applianceoffimg= applianceoffimg;
+        window.location.href=appliancepg;
+ 
+    }
+</script>
+</html>

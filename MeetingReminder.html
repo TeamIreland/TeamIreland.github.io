@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICE CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <br><br>
+            <h1 id="meetinginfo" align="center"> </h1><br>
+            <h1 align="center"> TODAY AT</h1><br>
+            <h1 id="todaystime" align="center"></h1>
+            <ul>
+                <li><button onclick="linkmtg()">
+                    <img id="todaysimg" width=80% height=80% alt="Knitting"><br><span id="meetinginfo1"></span> 
+                </button></li>
+            </ul>
+            
+            
+        </div>
+       
+        <div class="BACK">
+            <button onclick="window.location.href='REMINDER.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    
+</body>
+<script>
+    responsiveVoice.speak(sessionStorage.todaysreminder+' at '+sessionStorage.todaystime)
+    document.getElementById("meetinginfo").innerHTML = sessionStorage.todaysreminder;
+    document.getElementById("meetinginfo1").innerHTML = sessionStorage.todaysreminder;
+    document.getElementById("todaysimg").src = sessionStorage.todaysimg;
+    document.getElementById("todaystime").innerHTML = sessionStorage.todaystime;
+
+    function linkmtg(){
+        if(sessionStorage.todaysremindertype=="meeting"){
+            window.location.href='https://meet.google.com/lookup/bj66f76r3k?authuser=0&hs=179';
+        }
+    }
+  </script>
+</html>

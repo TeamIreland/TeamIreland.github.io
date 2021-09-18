@@ -1,0 +1,245 @@
+body, html {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  margin: 0%;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.container button {
+  margin: 0%;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+.container button:hover {
+  background-color: red;
+}
+
+.HOME {
+  height: 10%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.HOME button {
+  margin: 0;
+  padding: 0;
+  background-color: #31f031;
+  height: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.HOME button img {
+  margin: 0%;
+  padding: 0;
+}
+
+.HOME button text {
+  margin: 0%;
+  padding: 0;
+}
+
+.HOME .SpecialBut {
+  background-color: #411536;
+  width: 15%;
+}
+
+.HOME .SpecialHomeBut {
+  width: 70%;
+}
+
+.HOME .HomeBut {
+  width: 100%;
+}
+
+.gap {
+  height: 10%;
+  width: 100%;
+}
+
+.MAIN {
+  height: 80%;
+  width: 100%;
+  background: black;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  padding-left: 0%;
+  padding-right: 0%;
+  text-align: centre;
+  color: #d2e7d2;
+}
+
+.MAIN blockquote {
+  margin-top: 0;
+  padding-top: 5%;
+}
+
+.MAIN .maingap {
+  height: 10%;
+  width: 100%;
+}
+
+.MAIN .medical-login-container {
+  height: 50%;
+  width: 30%;
+  margin: 0%;
+  padding: 5%;
+  background: mediumslateblue;
+  float: right;
+}
+
+.MAIN .medical-login-container .loginform {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0%;
+}
+
+.MAIN .medical-login-container .loginform .loginTextArea {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 20%;
+}
+
+.MAIN .carer-login-container {
+  height: 50%;
+  width: 30%;
+  margin: 0%;
+  padding: 5%;
+  background: mediumslateblue;
+  float: left;
+}
+
+.MAIN .carer-login-container .loginform {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0%;
+}
+
+.MAIN .carer-login-container .loginform .loginTextArea {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 20%;
+}
+
+.MAIN .TextArea {
+  width: 100%;
+  height: 40%;
+}
+
+.MAIN img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.MAIN ul {
+  height: 35%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: black;
+}
+
+.MAIN ul li {
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  width: 33.33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.MAIN ul li button {
+  margin: 0%;
+  padding: 0%;
+  background-color: yellow;
+  height: 80%;
+  font-size: 1.3em;
+  width: 80%;
+  border-radius: 20%;
+  border-color: yellow;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.MAIN ul li button:hover {
+  background-color: #ff0080;
+}
+
+.MAIN ul li button img {
+  height: 65%;
+  width: 50%;
+}
+
+.MAIN ul li .faultbutton {
+  background-color: red;
+}
+
+.BACK {
+  height: 10%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.BACK button {
+  margin: 0;
+  padding: 0;
+  background-color: #e42e2e;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.BACK .SpecialBut {
+  background-color: #304647;
+  width: 15%;
+}
+
+.BACK .img {
+  margin: 0;
+  padding: 0;
+}
+
+.BACK .SpecialBackBut {
+  width: 85%;
+}
+
+.BACK .BackBut {
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */

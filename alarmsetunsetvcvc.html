@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="window.history.back(),speechSynthesis.speak(new SpeechSynthesisUtterance('Alarm Set ,Welcome to Appliances'));">
+                    <img src="/IMAGES/alarmset.svg" width=100% height=50% alt="ON"><br>SET</button>
+                    
+                </li>
+                <li></li>
+                <li><button onclick= "window.history.back(),responsiveVoice.speak(('Alarm Unset ,Welcome to Appliances'));">
+                    <img src="/IMAGES/alarmunset.svg" width=100% height=80% alt="OFF"><br>UNSET
+                </button></li>
+               
+                
+            </ul>
+            <div class="maingap"></div>
+            <ul>
+                <li></li>
+                <li>
+                    <button class="faultbutton" onclick= "window.history.back(),responsiveVoice.speak(('Fault Reported, Welcome To Aplliances'));">
+                        <img src="/IMAGES/fault.svg" width=80% height=80% alt="FAULT"><br>REPORT FAULT
+                        </button>
+                </li>
+                <li></li>
+            </ul>
+            <div class="maingap"></div>
+        </div>
+        <div class="BACK">
+            <button onclick="window.history.back(),responsiveVoice.speak(('Fault Reported, Welcome To Aplliances'));">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+
+        var x="0";
+        recognition.onresult = function(event) {
+            // console.log(event);
+           
+            x=event.results[0][0].transcript;
+           
+                   if (x=='set'){
+                   responsiveVoice.speak(("Alarm has been set, Welcome to Appliances, Here we have cooker, lights, heating, alarm, blinds and door"));
+                   window.location.href='APPLIANCESvc.html';
+                    record()
+
+                    }
+                    else if (x=='unset' || x=='upset' ){
+                       responsiveVoice.speak(("Alarm has been unset,Welcome to Appliances, Here we have cooker, lights, heating, alarm, blinds and door"));
+                       window.location.href='APPLIANCESvc.html';
+                        record()
+                    }
+                    else if (x=='report fault' || x=='reportfault'){
+                       responsiveVoice.speak(("Fault has been reported, your family members or carer has been informed they will come and fix it."));
+                        
+                       record()
+                    }
+                    
+                    else if (x=='home' || x=='go home' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else if (x=='thank you' || x=='thanks' ){
+                       responsiveVoice.speak(("Your welcome, hehe"));
+                        record()
+                    }
+                    else if (x=='back' || x=='go back' || x=='0' ){
+                       responsiveVoice.speak(("Here we have cooker, lights, heating, alarm, blinds and door"));
+                       window.location.href='APPLIANCESvc.html';
+                    }
+                    else{                   
+                    
+                        record()
+                    } 
+        }
+        recognition.start(); 
+          
+    }
+
+</script>
+    
+</body>
+
+
+</html>

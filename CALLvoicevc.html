@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICE CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload=voice()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=90% alt="GO BACK"></button>
+        </div> 
+       
+        <div class="MAIN">
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="window.location.href='VoiceCallvc.html';">
+                    <img src="/IMAGES/phone3.svg" width=100% height=80% alt="Phone"><br>VOICE CALL
+                </button></li>
+                <li><button onclick="window.location.href='VideoCallvc.html';">
+                    <img src="/IMAGES/Videocall.svg" width=100% height=80% alt="VideoCall"><br>VIDEO CALL
+                </button></li>
+                <li><button onclick="window.location.href='Groupsvc.html';">
+                    <img src="/IMAGES/Group-meet.svg" width=100% height=80% alt="Group CALL"><br>GROUP CALL
+                </button></li>
+                
+                
+            </ul>
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="window.location.href='DOCTORvc.html';">
+                    <img src="/IMAGES/Doctor.svg" width=100% height=60% alt="Doctor"><br>DOCTOR
+                </button></li>
+                <li><button onclick="window.location.href='emergencyvc.html';" >
+                    <img src="/IMAGES/emergency.svg" width=100% height=60% alt="EMERGENCY"><br>EMERGENCY
+                </button></li>
+                <li></li>
+                
+                
+            </ul>
+            <div class="maingap"></div>
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.location.href='touchmenuvc.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=90% alt="GO BACK"></button>
+        </div>
+
+    </div>
+    <script>
+        function voice(){
+            textSpeak("say yes for voice recognition");
+        }
+        function menu(){
+            setTimeout(record, 6500);
+            textSpeak("who do you want to call");
+            setTimeout(record, 6500);
+            
+            
+        }
+        function record() {
+            
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            var x="0";
+            recognition.onresult = function(event) {
+                // console.log(event);
+               
+
+                
+                x=event.results[0][0].transcript;
+                
+                switch(x){
+                    case "call":
+                        
+                        window.location.href='VoiceCallvc.html';          
+                        break;
+                    case "home":
+                        window.location.href='touchmenuvc.html';
+                        break;
+                    case "emergency":
+                        window.location.href='emergencyvc.html';
+                        break;
+                    case "video":
+                        window.location.href='VideoCallvc.html';
+                    break;
+                    case "groups":
+                        window.location.href='Groupsvc.html';
+                        break;
+                    case "doctor":
+                        
+                        window.location.href='DOCTORvc.html';
+                    break;  
+                    case "back":
+                        window.location.href='touchmenuvc.html';
+                        
+                    
+                }
+                
+            }
+            recognition.start(); 
+              
+        }
+    
+        function textSpeak(wordtospeak){
+           
+            
+            responsiveVoice.speak(wordtospeak);
+        }
+        
+    </script>
+</body>
+</html>

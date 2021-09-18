@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARER</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="SpecialBut" onclick="window.location.href='CareLoginvc.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">CARER</button><!--
+                --><button class="SpecialHomeBut" onclick="window.location.href='touchmenuvc.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button><!--
+                --><button class="SpecialBut" onclick="window.location.href='MedLoginvc.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">MEDICAL
+            </button>
+        </div> 
+        <div class="MAIN">
+            <form action="/DATA/Data.txt">
+                <blockquote>
+                    <label for="date">Date:</label><br>
+                    <input type="date" id="date" name="date"><br>
+                    <label for="time">Time:</label><br>
+                    <input type="time" id="time" name="time"><br>
+                    <label for="fname">Carer name:</label><br>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label for="Comments">Comments:</label><br>
+                
+                    <textarea class="TextArea" name="Comments" id = "Comments" rows="10" cols="30"></textarea>
+                    <br><br>
+                    <input type="submit">
+
+                </blockquote>
+                
+            </form>
+            
+        </div>
+        <div class="BACK">
+            <button onclick="window.location.href='touchmenuvc.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    
+</body>
+
+                    
+              
+
+
+
+</html>

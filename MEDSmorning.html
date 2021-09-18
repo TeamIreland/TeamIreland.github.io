@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDSYESNO</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script>responsiveVoice.speak('have you taken morning meds?');</script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <br><br>
+           
+            <h1><span style="padding-left:10%">Have you taken </span></h1>
+            <h1><span style="padding-left:10%">MORNING MEDS </span></h1>
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="morningmedsNOTtaken()">
+                    <img src="/IMAGES/no.svg" width=100% height=50% alt="NO">NO</button>
+                    
+                </li>
+                <li></li>
+                <li><button onclick="morningmedstaken()"  >
+                    <img src="/IMAGES/yes.svg" width=100% height=80% alt="YES">YES
+                </button></li>
+               
+                
+            </ul>
+            
+        </div>
+        <div class="BACK">
+            <button onclick="window.location.href='REMINDER.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    
+    
+</body>
+<script>
+    function morningmedstaken() {
+        sessionStorage.morningmeds= "taken";
+        window.location.href='REMINDER.html';
+     
+    }
+    function morningmedsNOTtaken() {
+        sessionStorage.morningmeds= "nottaken";
+        window.location.href='REMINDER.html';
+     
+    }
+</script>
+
+</html>

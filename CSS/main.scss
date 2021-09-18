@@ -1,0 +1,244 @@
+body,html{
+    background-color: black;
+    margin: 0;
+    padding:0;
+    height:100vh;
+    width:100vw;
+    
+    
+}
+
+.container{
+    margin:0%;
+    padding:0;
+    height:100%;
+    width:100%;
+    background-color:black;
+    button{
+        &:hover{
+            
+            background-color: red;
+            
+        } 
+        margin:0%;
+        padding:0; 
+        height:100%;
+        width:100%;
+        background-color:blue; 
+        
+        
+        
+        
+    }
+    
+    
+}
+
+.HOME {
+    height:10%;
+    width:100%;
+    margin:0;
+    padding:0;
+
+    button{
+        margin:0;
+        padding:0;
+        background-color:rgb(49, 240, 49);
+        height:100%;
+        font-weight:bold ;
+        cursor:pointer;
+        img{
+            margin:0%;
+            padding:0;
+        }
+        text{
+            margin:0%;
+            padding:0;
+        }
+          
+    }
+    
+        
+    .SpecialBut{
+        background-color: rgb(65, 21, 54);
+        width:15%;
+    }
+
+    .SpecialHomeBut{
+        width:70%;
+    }
+    .HomeBut{
+        width:100%;
+    }
+    
+    
+    
+} 
+.gap{
+    height:10%;
+    width:100%;
+}
+.MAIN{
+    height:80%;
+    width:100%;
+    background:black;
+    margin-bottom: 0%;
+    margin-top:0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: centre;
+    color:rgb(210, 231, 210);
+    blockquote{
+        margin-top:0;
+        padding-top:5%;
+        
+    }
+    .maingap{
+        height:10%;
+        width:100%;
+    }
+    .medical-login-container{
+        height:50%;
+        width:30%;
+        margin:0%;
+        padding:5%;
+        background:mediumslateblue;
+        float:right;
+        .loginform{
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0%;
+            .loginTextArea{
+                margin:0;
+                padding:0;
+                width:100%;
+                height:20%;
+            }
+        }
+    }
+    .carer-login-container{
+        height:50%;
+        width:30%;
+        margin:0%;
+        padding:5%;
+        background:mediumslateblue;
+        float:left;
+    
+        .loginform{
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0%;
+            .loginTextArea{
+                margin:0;
+                padding:0;
+                width:100%;
+                height:20%;
+            }
+        }
+    }
+    .TextArea{
+    width:100%;
+    height: 40%;
+    }
+    img.center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+    }
+    
+    ul{
+        height:35%;
+        width: 100%;
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        display:flex;
+        justify-content: center;
+        background:black;
+    
+        li{
+            margin:0%; 
+            padding:0%;
+            height:100%;
+            width: 33.33%;
+            display:flex;
+            justify-content:center;
+            
+            button{
+                margin:0%;
+                padding:0%;
+
+                background-color: yellow;
+                height:80%;
+                font-size: 1.3em;     
+                width:80%;
+                border-radius:20%;
+                border-color:yellow;
+             
+                font-weight: bold;
+                cursor:pointer;
+                &:hover{
+                        background-color:rgb(255, 0, 128);
+                }
+                img{
+                    height:65%;
+                    width:50%;
+                   
+                }
+                
+                
+            }
+            .faultbutton
+            {
+                background-color:red;
+            } 
+            
+        }
+    }
+    
+    
+
+    
+    
+}
+  
+.BACK {
+    height:10%;
+    width:100%;
+    margin:0;
+    padding:0;
+    button{
+        margin:0;
+        padding:0;
+        background-color: rgb(228, 46, 46);
+        height:100%;
+        width:100%;
+        font-weight:bold;
+        cursor:pointer;
+        
+    }
+    .SpecialBut{
+        background-color:rgb(48, 70, 71);
+        width: 15%;
+        
+    }
+    .img{
+        margin:0;
+        padding:0;  
+    }
+
+    .SpecialBackBut{
+        width:85%;
+    }
+    .BackBut{
+        width:100%
+    }
+    
+}  

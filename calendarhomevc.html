@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body onload= 'setTimeout(record, 3000);'>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find'));">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK"><br>GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="window.location.href='REMINDERvc.html',responsiveVoice.speak(('Welcome to the reminder screen.'));" >
+                    <img src="/IMAGES/todo.svg" width=100% height=80% ><br>Reminder
+                </button></li>
+               <li></li>
+                <li><button  onclick="window.location.href='CALENDERvc.html',responsiveVoice.speak(('Welcome to the google calendar screen.'));">
+                    <img src="/IMAGES/calendar.svg" width=100% height=80% alt="CALENDAR"><br>CALENDAR
+                </button></li>
+            </ul>
+           
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find'));">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK"><br>GO BACK</button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+            var x="0";
+            recognition.onresult = function(event) {
+                // console.log(event);
+                
+                x=event.results[0][0].transcript;
+
+                         if (x=='reminder' || x=='' ){
+                           responsiveVoice.speak(("Here we have, Moring Meds, Evening Meds,Exercise, Knitting and Hospital Appointment"));
+                            window.location.href='REMINDERvc.html';
+                        }
+                        else if (x=='home' || x=='go home' ){
+                           responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                            window.location.href='HOMEvc.html';
+                        }
+                        else if (x=='back' || x=='go back' || x=='0' ){
+                           responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                            window.location.href='touchmenuvc.html';
+                        }
+                        else if (x=='calendar' ){
+                           responsiveVoice.speak(("Welcome to the google calendar screen."));
+                            window.location.href='CALENDERvc.html';
+                        }
+                        else{
+                            record()
+                        }
+            }
+            recognition.start();    
+        }
+    </script>
+    
+</body>
+
+</html>

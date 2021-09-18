@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCISEDUE</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=60% alt="GO BACK">GO HOME</button>
+        </div>  
+        <div class="MAIN">
+            
+            <div class="maingap"></div>
+            <h1 color="red" align="center">WAIT ......... NEED TO EXERCISE!</h1>
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="window.location.href='legexercisesvc.html';" >
+                    <img src="/IMAGES/Leg-exercises.svg" width=100% height=80% alt="LEGS"><br>LEGS
+                </button></li>
+                <li><button>
+                    <img src="/IMAGES/Arm-exercises.svg" width=100% height=80% alt="ARMS"><br>ARMS
+                </button></li>
+                <li>
+                    <button onclick=wheretogo()>
+                        <img src="/IMAGES/no.svg" width=100% height=80% alt="IGNORE"><br>IGNORE
+                    </button> 
+                </li>
+                
+        </div>
+    
+        <div class="BACK">
+            <button onclick="window.history.back();">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+       
+    
+</body>
+<script>
+    function wheretogo(){
+        if(sessionStorage.prevpage=="touchmenuvc.html"){
+            window.location.href='ACTIVITY1vcvc.html';
+        }
+        else{
+            window.history.back();
+        }
+    }
+</script>
+</html>

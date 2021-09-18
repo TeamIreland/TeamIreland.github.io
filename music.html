@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour Hub</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+            <div class="maingap"></div>
+            <ul>
+                <li>
+                    <button onclick="storeiframe('https://www.youtube.com/embed/w-QmCd4sVvs','Lockdown Session Christy Moore','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')">
+                        <img src="/IMAGES/music.svg" width=100% height=50% alt="GO BACK"><br>LOCKDOWN SESSION<br>Christy Moore</button>
+                </li>
+                <li>
+                <button onclick="storeiframe('https://www.youtube.com/embed/_SVo9W4QM5A/','ChristyMoore','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')">
+                    <img src="/IMAGES/music.svg" width=100% height=50% alt="THE LEGIONAIRE"><br>LISDOONVARNA<br>Christy Moore</button>
+               </li>
+               <li>
+                <button onclick="storeiframe('https://www.youtube.com/embed/nPOjXKe0LdQ','Nancy Spain','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')">
+                    <img src="/IMAGES/music.svg" width=100% height=50% alt="Christy moore"><br>NANCY SPAIN<br>Christy Moore</button>
+               </li>
+            </ul>
+            <div class="maingap"></div>
+            <ul>
+                <li>
+                    <button onclick="storeiframe('https://www.youtube.com/embed/kImequ9Gky8','Womans Heart','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')">
+                        <img src="/IMAGES/music.svg" width=100% height=50% alt="Womans Heart"><br>WOMANS HEART<br>Eleanor McEvoy</button>
+                </li>
+                <li>
+                    <button  onclick="storeiframe('https://www.youtube.com/embed/rmxqjzCxNEE','Caledonia','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')">
+                        <img src="/IMAGES/music.svg" width=100% height=50% alt="GO BACK"><br>CALEDONIA<br>Dougie McLean</button>
+                </li>
+                <li>
+                    <button onclick="storeiframe('https://www.youtube.com/embed/et7pBc-NaQs','True Colours','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')" >
+                        <img src="/IMAGES/music.svg" width=100% height=50% alt="Statue"><br>TRUE COLOURS<br>Eleanor McEvoy</button>
+                </li>
+
+            </ul>
+            <div class="maingap"></div>
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.location.href='ACTIVITY1.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+   
+    
+</body>
+<script>
+    responsiveVoice.speak('Listen to Music')
+    function storeiframe(iframesrc,iframename,iframesandbox) {
+        sessionStorage.iframesrc=iframesrc;
+        sessionStorage.iframename=iframename;
+        sessionStorage.iframesandbox=iframesandbox;
+        window.location.href='ActivityAction2.html';
+        
+    }
+</script>
+</html>
+
