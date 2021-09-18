@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLIANCES</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <ul>
+                <li><button>
+                    <img src="/IMAGES/Cooker.svg" width=100% height=80% alt="COOKER">COOKER
+                </button></li>
+                <li><button onclick="window.location.href='roomslightsvc.html';">
+                    <img src="/IMAGES/Lights.svg" width=100% height=80% alt="LIGHTS"> LIGHTS
+                </button></li>
+                <li><button>
+                    <img src="/IMAGES/Heating.svg" width=100% height=80% alt="HEATING">HEATING
+                </button></li>
+            </ul>
+            <ul>
+                <li><button onclick="window.location.href='securityvc.html';">
+                    <img src="/IMAGES/Security.svg" width=100% height=80% alt="Security">SECURITY
+                </button></li>
+                <li><button onclick="window.location.href='roomsblindsvc.html';">
+                    <img src="/IMAGES/blinds.svg" width=100% height=80% alt="BLINDS">BLINDS
+                </li></ul></button>
+                <li></li>
+                
+            </ul>
+            
+        </div>
+        <div class="BACK">
+            <button onclick="window.history.back();">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+
+    </div>
+       
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOICE CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload="record();">
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=90% alt="GO BACK"></button>
+        </div> 
+       
+        <div class="MAIN">
+            <div class="maingap"></div>
+            <br><br><br>
+            <h1 align="center">Renewal Request Sent ... for</h1>
+            <ul>
+                <li>
+                    <button>
+                        <img id="medrenewimg" width=60% height=60% alt="medrenew"><br><span id="medname"></span> 
+                    </button>
+                </li>
+            </ul>
+            
+        </div>
+       
+        <div class="BACK">
+            <button onclick="window.location.href='RenewalRequestvc.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=90% alt="GO BACK"></button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+
+        var x="0";
+        recognition.onresult = function(event) {
+            // console.log(event);
+           
+            x=event.results[0][0].transcript;
+        
+
+                   
+                    if (x=='home' || x=='go home' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else if (x=='back' || x=='go back' || x=='0' ){
+                        responsiveVoice.speak(("Which of YOUR MEDS would you like to renewal Paracetomal, Wafferin, Stains"));
+                        window.location.href='RenewalRequestvc.html';
+                    }
+                    else{                   
+                    
+                        record()
+                    } 
+        }
+        recognition.start(); 
+          
+    }
+
+</script>
+</body>
+<script>
+    document.getElementById("medrenewimg").src=sessionStorage.medrenewimg;
+    document.getElementById("medname").innerHTML=sessionStorage.medname;
+</script>
+</html>

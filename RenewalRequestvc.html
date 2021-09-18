@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDSYESNO</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload="setTimeout(record,4000)">
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <br><br>
+            <h1 align="center">Which of YOUR MEDS would you like to RENEW:</h1>
+            <div class="maingap"></div>
+            <ul>
+                <li><button onclick="renewalsend('Paracetamol','/IMAGES/tablet1.svg')">
+                    <img src="/IMAGES/tablet1.svg" width=100% height=50% alt="PARACETAMOL"><br>PARACETAMOL</button>  
+                </li>
+                <li><button onclick="renewalsend('Warferin','/IMAGES/tablet2.svg')">
+                    <img src="/IMAGES/tablet2.svg" width=100% height=50% alt="WARFERIN"><br>WARFERIN</button>
+                </li>
+                <li><button onclick="renewalsend('Statins','/IMAGES/tablet3.svg')">
+                    <img src="/IMAGES/tablet3.svg" width=100% height=50% alt="STATINS"><br>STATINS</button>
+                </li>
+               
+                
+            </ul>
+            
+        </div>
+        <div class="BACK">
+            <button onclick="window.location.href='DOCfunctionsvc.html'">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+
+        var x="0";
+        recognition.onresult = function(event) {
+            // console.log(event);
+           
+            x=event.results[0][0].transcript;
+        
+
+                   if (x=='paracetamol' || x=='paracetamol'){
+                    responsiveVoice.speak('paracetomal renewal sent')
+                    renewalsend('Paracetamol','/IMAGES/tablet1.svg')
+                   }
+                   else if (x=='warfarin' || x=='warfarin'){
+                    responsiveVoice.speak('waferin renewal sent')
+                    renewalsend('Warferin','/IMAGES/tablet2.svg')
+                   }
+                   else if (x=='statin' || x=='statins'){
+                    responsiveVoice.speak('statins renewal sent')
+                   renewalsend('Warferin','/IMAGES/tablet2.svg')
+                  }
+                    else if (x=='home' || x=='go home' ){
+                       responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                        window.location.href='touchmenuvc.html';
+                    }
+                    else if (x=='back' || x=='go back' || x=='0' ){
+                        responsiveVoice.speak(("Here you can renewal prescription, make appointment, request call, send video and answer triage"));
+                        window.location.href='DOCfunctionsvc.html';
+                    }
+                    else{                   
+                    
+                        record()
+                    } 
+        }
+        recognition.start(); 
+          
+    }
+
+</script>
+    
+</body>
+<script>
+    function renewalsend(medname,medrenewimg){
+        sessionStorage.medname=medname;
+        sessionStorage.medrenewimg=medrenewimg;
+        window.location.href='RenewalSentvc.html';
+
+    }
+</script>
+
+
+</html>

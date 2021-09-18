@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour Hub</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenu.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=50% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div>
+            <ul>
+               <li>
+                <button onclick="storeiframe('https://www.youtube.com/embed/KGerjHMa90s','Tour England','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')">
+                    <img src="/IMAGES/England.svg" width=100% height=50% alt="ENGLAND"><br>ENGLAND</button>
+               </li>
+
+               <li>
+                <button onclick="storeiframe('https://www.youtube.com/embed/yF8W85JwJwU','Tour Pyramids','allow-scripts allow-top-navigation allow-same-origin allow-presentation allow-forms allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-modals allow-orientation-lock')">
+                    <img src="/IMAGES/Cairo.svg" width=100% height=50% alt="CAIRO"><br>CAIRO</button>
+               </li>
+
+               <li>
+                <button onclick="">
+                    <img src="/IMAGES/India.svg" width=100% height=50% alt="GO BACK"><br>Taj Mahal</button>
+               </li>
+            </ul>
+            <div class="maingap"></div>
+            <ul>
+                <li>
+                    <button onclick="">
+                        <img src="/IMAGES/Buckingham.svg" width=100% height=50% alt="GO BACK"><br>Buckingham Palace</button>
+                </li>
+                <li>
+                    <button onclick="">
+                        <img src="/IMAGES/Italy.svg" width=100% height=50% alt="GO BACK"><br>Italy</button>
+                </li>
+                <li>
+                    <button onclick="">
+                        <img src="/IMAGES/StatueLiberty.svg" width=100% height=50% alt="Statue"><br>Statue OF Liberty</button>
+                </li>
+
+            </ul>
+            <div class="maingap"></div>
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.location.href='ACTIVITY1.html';">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+   
+    
+</body>
+<script>
+    responsiveVoice.speak('Take a Tour');
+    function storeiframe(iframesrc,iframename,iframesandbox) {
+        sessionStorage.iframesrc=iframesrc;
+        sessionStorage.iframename=iframename;
+        sessionStorage.iframesandbox=iframesandbox;
+        window.location.href='ActivityAction2.html';
+        
+    }
+</script>
+</html>
+

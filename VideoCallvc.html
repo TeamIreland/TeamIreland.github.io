@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO CALL</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut"  onclick="window.location.href='touchmenuvc.html';">
+                <img src="/IMAGES/Home-button.svg" width=100% height=90% alt="GO BACK"></button>
+        </div> 
+        
+        <div class="MAIN">
+            <div class="maingap"></div> 
+            <ul>
+                <li><button  onclick="setpersontovcall('Will','/IMAGES/will.svg');">
+                    <img src="/IMAGES/will.svg" width=80% height=80% alt="Will"><br>WILL
+                </button></li>
+                <li><button  onclick="setpersontovcall('Mom','/IMAGES/mom.svg');">
+                    <img src="/IMAGES/mom.svg" width=80% height=80% alt="Group CALL"><br>MOM
+                </button></li>
+                <li><button  onclick="setpersontovcall('Peter','/IMAGES/peter.svg');">
+                    <img src="/IMAGES/peter.svg" width=80% height=80% alt="VideoCall"><br>PETER
+                </button></li>
+                
+            </ul>
+            <div class="maingap"></div>
+            <ul>
+                <li><button  onclick="setpersontovcall('Benedict','/IMAGES/benedict.svg');">
+                    <img src="/IMAGES/benedict.svg" width=80% height=70% alt="INACTIVE"><br>BENEDICT
+                </button></li>
+                <li><button  onclick="setpersontovcall('Brian','/IMAGES/brian.svg');">
+                    <img src="/IMAGES/brian.svg" width=80% height=80% alt="INACTIVE"><br>BRIAN
+                </button></li>
+                <li><button>
+                    <img src="/IMAGES/more.svg" width=80% height=80% alt="INACTIVE"><br>MORE
+                </button></li>
+                
+                
+            </ul>
+            <div class="maingap"></div> 
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.history.back();">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=90% alt="GO BACK"></button>
+        </div>
+
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('voice-form');
+        const input = document.getElementById('speech');
+        });
+    </script>
+    <script>
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            var x="0";
+            recognition.onresult = function(event) {
+                // console.log(event);
+               
+
+                x=event.results[0][0].transcript;
+                         if (x=='home' || x=='go home' ){
+                           responsiveVoice.speak(("Here we have phone, calendar, appliances, activities, exercise and find"));
+                            window.location.href='HOMEvc.html';
+
+                        }
+                        else if (x=='back' || x=='go back' || x=='0' ){
+                           responsiveVoice.speak(("Welcome to the Call screen."));
+                            window.location.href='CALLvc.html';
+                        }
+                        else if (x=='will' || x=='well' ){
+                           responsiveVoice.speak(("Hi, you are now calling Will"));
+                            setpersontovcall('Will','/IMAGES/will.svg');
+                        }
+                        else if (x=='mom' || x=='mam' || x=='mum' || x=='mommy' ){
+                            responsiveVoice.speak(("Hi, you are now calling MOM"));
+                            setpersontovcall('Mom','/IMAGES/mom.svg');
+                        }
+                        else if (x=='Peter' || x=='peater' ){
+                            responsiveVoice.speak(("Hi, you are now calling Peter"));
+                            setpersontovcall('Peter','/IMAGES/peter.svg');
+                        }
+                        else if (x=='Benedict'){
+                            responsiveVoice.speak(("Hi, you are now calling Benedict"));
+                            setpersontovcall('Benedict','/IMAGES/benedict.svg');
+                        }
+                        else if (x=='Brian'){
+                            responsiveVoice.speak(("Hi, you are now calling Brian"));
+                            setpersontovcall('Brian','/IMAGES/brian.svg');
+                        }
+                        else if (x=='more'){
+                            swindow.location.href='tel:+353870524691';
+                        }
+                        
+                        else{
+
+                            record();
+                        }
+
+            }
+            recognition.start(); 
+              
+        }
+
+    </script>
+</body>
+<script>
+    function setpersontovcall(persontovcall,persontovcallimg){
+        sessionStorage.persontovcall=persontovcall;
+        sessionStorage.persontovcallimg=persontovcallimg;
+        window.location.href='Videocallingvc.html';
+    }
+</script>
+</html>

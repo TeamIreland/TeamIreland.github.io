@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOMSLIGHTS</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body onload=record()>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <div class="container">
+        
+        <div class="HOME">
+            <button class="HomeBut" onclick="window.location.href='touchmenuvc.html',responsiveVoice.speak(('Here we have phone, calendar, appliances, activities, exercise and find')); ">
+                <img src="/IMAGES/Home-button.svg" width=100% height=60% alt="GO BACK">GO HOME</button>
+        </div> 
+        <div class="MAIN">
+            <div class="maingap"></div> 
+            <ul>
+                <li><button class="faultbutton" onclick=lightsfault()>
+                    <img src="/IMAGES/fault.svg" width=80% height=80% alt="FAULT"><br>REPORT FAULT
+                </button></li>
+                <li><button onclick="window.location.href='LightsYesNovc.html';">
+                    <img src="/IMAGES/livingroomlights.png" width=80% height=80% alt="LIVING ROOM"><br>LIVING ROOM
+                </button></li>
+                <li><button onclick="window.location.href='LightsYesNovc.html';">
+                    <img src="/IMAGES/halllights.png" width=80% height=80% alt="HALL"><br>HALL
+                </button></li>
+                
+            </ul>
+            <div class="maingap"></div> 
+            <ul>
+                <li><button onclick="window.location.href='LightsYesNovc.html';">
+                    <img src="/IMAGES/landinglights.png" width=80% height=70% alt="LANDING"><br>LANDING
+                </button></li>
+                <li><button onclick="window.location.href='LightsYesNovc.html';">
+                    <img src="/IMAGES/kitchenlights.png" width=80% height=80% alt="KITCHEN"><br>KITCHEN
+                </button></li>
+                <li><button onclick="window.location.href='roomslights2vc.html';">
+                    <img src="/IMAGES/more.svg" width=80% height=80% alt="INACTIVE"><br>MORE
+                </button></li>
+                
+                
+            </ul>
+            <div class="maingap"></div> 
+        </div>
+        
+        <div class="BACK">
+            <button onclick="window.history.back();">
+                <img src="/IMAGES/Back-arrow.svg" width=100% height=50% alt="GO BACK">GO BACK</button>
+        </div>
+
+    </div>
+    
+</body>
+<script>
+    function lightsfault() {
+        sessionStorage.faultlocation= "LIGHTS";
+        window.location.href='faultreportvc.html';
+     
+    }
+</script>
+</html>
